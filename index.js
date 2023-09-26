@@ -126,6 +126,9 @@ async function main() {
 
     generated.forEach(([k, v]) => createFile(k, v));
 
+    const everything = Object.fromEntries(generated);
+    createFile("all", everything);
+    
     return;
   } catch (err) {
     console.error(err);
