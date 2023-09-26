@@ -1,8 +1,8 @@
-_Work in progress_
+⚠ _Work in progress_ ⚠ 
 
 # DDD-Gen
 
-_**DDD**_ stands for "Dumbed-Down Dataforged". [Rsek]() did amazing work on the Dataforged repo, but I found the API a bit cumbersome for my own use. This is a simplified (and incomplete) version focused on reformatting the oracle tables.
+_**DDD**_ stands for "Dumbed-Down Dataforged". [Rsek](https://github.com/rsek) did amazing work on the [official Dataforged repo](https://github.com/rsek/dataforged), but I found the API a bit heavyweight for my own use. This is a simplified (and incomplete) version focused on reformatting the oracle tables.
 
 The generated JSON files reside in `/dist`, the rest is the Node script that creates them.
 
