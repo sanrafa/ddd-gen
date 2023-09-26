@@ -8,9 +8,9 @@ import {
 
 function generateStarOracle(root_oracles) {
   const json = findById("Starforged/Oracles/Space", root_oracles);
+  if (!json) throw new Error("Unable to generate Star oracle");
+  
   const oracles = json["Oracles"];
-
-  if (!oracles) throw new Error("Unable to generate Star oracle");
 
   const star_oracle = findById(
     "Starforged/Oracles/Space/Stellar_Object",
@@ -22,9 +22,8 @@ function generateStarOracle(root_oracles) {
 
 function generateSettlementOracles(root_oracles) {
   const json = findById("Starforged/Oracles/Settlements", root_oracles);
+  if (!json) throw new Error("Unable to generate Settlement oracles");
   const oracles = json["Oracles"];
-
-  if (!oracles) throw new Error("Unable to generate Settlement oracles");
 
   // We only want some of these
   const oracle_names = [
@@ -53,12 +52,11 @@ function generateSettlementOracles(root_oracles) {
 
 function generatePlanetOracles(root_oracles) {
   const json = findById("Starforged/Oracles/Planets", root_oracles);
+  if (!json) throw new Error("Unable to generate Planet oracles");
+  
   const oracles = json["Oracles"];
   const categories = json["Categories"];
 
-  if (!oracles || !categories) {
-    throw new Error("Unable to generate Planet oracles");
-  }
 
   const result = {};
 
@@ -83,10 +81,25 @@ function generatePlanetOracles(root_oracles) {
 
 function generateCoreOracles(root_oracles) {
   const json = findById("Starforged/Oracles/Core", root_oracles);
+  if (!json) throw new Error("Unable to generate Core oracles.");
   const oracles = json["Oracles"];
   const result = {};
   for (const oracle of oracles) {
     const key = oracle["Name"].toLowerCase();
+    result[key] = createOracle(oracle);
+  }
+
+  return result;
+}
+
+function generateVaultOracles (root_oracles) {
+  const json = findById("Starforged/Oracles/Vaults", root_oracles);
+  if (!json) throw new Error("Unable to generate Vault oracles.");
+  const oracles = json["Oracles"];
+  const result = {};
+
+  for (const oracle of oracles) {
+    const key = oracle["Name"].split(" ").join("_").toLowerCase();
     result[key] = createOracle(oracle);
   }
 
@@ -101,6 +114,7 @@ async function main() {
     settlements: generateSettlementOracles,
     planets: generatePlanetOracles,
     core: generateCoreOracles,
+    vaults: generateVaultOracles
   };
 
   try {
