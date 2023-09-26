@@ -34,9 +34,9 @@ Oracle table objects also have an `all` key, an array listing all possible `valu
 ### `planets.json`
 
 
-## License
+## LICENSE
 
-All data in this project is based on [Ironsworn: Starforged](www.ironswornrpg.com), created by Shawn Tomkin, and licensed for use under the [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International license](www.creativecommons.org/licenses/by-nc-sa/4.0/).
+All data in this project is based on [Ironsworn: Starforged](https://www.ironswornrpg.com), created by Shawn Tomkin, and licensed for use under the [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International license](https://www.creativecommons.org/licenses/by-nc-sa/4.0/).
 
 Credit to the original [Dataforged project](https://github.com/rsek/dataforged), maintained by Rsek.
 
