@@ -1,0 +1,13 @@
+{
+  "name": "ddd-gen",
+  "version": "1.0.0",
+  "description": "Generate lighter JSON files based on Dataforged repo",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "build": "node index.js"
+  },
+  "keywords": [],
+  "author": "Rafa Brown",
+  "license": "MIT"
+}
